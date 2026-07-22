@@ -4,7 +4,7 @@
 # as an internal type, ellipsis is anon, so we cant just say 
 # ellipsis.__bases__
 # Ellipsis, is an object instance of the class ellipsis, which
-# is anonymous 
+# is anonymous -> to access it we can bind the class via type
 
 class A:
     ...  # this works
@@ -13,7 +13,13 @@ class A:
 x = ...
 
 print(type(x))
-# <class 'ellipsis'
+# <class 'ellipsis'>
+
+ellipsisClass = type(x)
+# binding <class 'ellipsis'> to a variable
+
+print(dir(ellipsisClass))
+# works, returns a list of dunders
 
 print(type(x).__bases__)
 # (<class 'object'>,)
