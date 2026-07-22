@@ -70,12 +70,26 @@ b = B()
 
 class C:
     def __new__(cls):
+        print('1, calling __new__')
         return "hello"
 
     def __init__(self):
-        pass
+        print('2, calling __init__')
 
 c = C()
 print(c, type(c))
+# 1, calling __new__
 # hello <class 'str'>
-# this works -> new can return any object
+# __init__ is not called because the object returned by __new__ is not
+# the same type of object of the class that constructed it
+#
+# does obj = C.__new__(C)
+# __init__ specifically acts as an initializer, only for instances of the class
+
+
+class D:
+    pass
+
+print(D.__dict__)
+# no __new__ method
+# if we do d = D(), calls object.__new__
