@@ -82,7 +82,7 @@ print(e.x)
 # C getattribute called: x
 # 11
 #
-# since C is the first class with x in the MRO
+# since C is the first class with x in E's MRO
 #
 # 1. E's __getattribute__ is called
 # 2. super goes to C's __getattribute__
@@ -104,5 +104,19 @@ print(g.x)
 # F getattr called
 # 100
 #
-# __getattr__ is inherited, so as the last fallback, it checks if 
-# it is implemented anywhere 
+# __getattr__ is inherited, so if a normal attribute lookup causes
+# an attribute error, python looks for __getattr__ in the class's mro
+
+
+class H:
+    def __getattribute__(self, name):
+        print('H getattribute called')
+        return 111
+
+class I(H):
+    pass
+
+i = I()
+print(i.x)
+# H getattribute called
+# 111
