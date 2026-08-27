@@ -1,0 +1,8 @@
+[
+  {"id": 1, "name": "Maya Chen", "city": "Seattle", "age": 34, "active": true},
+  {"id": 2, "name": "Omar Haddad", "city": "Chicago", "age": 41, "active": true},
+  {"id": 3, "name": "Priya Raman", "city": "Austin", "age": 29, "active": false},
+  {"id": 4, "name": "Lucas Moreau", "city": "Seattle", "age": 37, "active": true},
+  {"id": 5, "name": "Sofia Rossi", "city": "Denver", "age": 25, "active": false},
+  {"id": 6, "name": "Daniel Kim", "city": "Chicago", "age": 45, "active": true}
+]
