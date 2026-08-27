@@ -6,7 +6,7 @@ def read_csv(path):
         for row in reader:
             print(row)
 
-read_csv("csv1.csv")
+read_csv("data/csv1.csv")
 # ['id', 'first_name', 'last_name', 'email', 'department', 'salary', 'start_date', 'is_active']
 # ['1', 'Maya', 'Chen', 'maya.chen@example.com', 'Engineering', '118000', '2019-03-11', 'True']
 # ...
@@ -20,7 +20,7 @@ def read_csv2(path):
         for row in reader:
             print(row["first_name"], row["department"])
 
-read_csv2("csv1.csv")
+read_csv2("data/csv1.csv")
 # ['id', 'first_name', 'last_name', 'email', 'department', 'salary', 'start_date', 'is_active']
 # Maya Engineering
 # Omar Engineering
@@ -42,14 +42,14 @@ def write_csv1(path):
         writer.writeheader()
         writer.writerows(rows)
 
-write_csv1("csv2.csv")
+write_csv1("data/csv2.csv")
 #   line 220, in _dict_to_list
 #     raise ValueError("dict contains fields not in fieldnames: "
 #                      + ", ".join([repr(x) for x in wrong_fields]))
 #
 # writer fieldnames and row field names must match
 
-# write_csv1("csv2.csv")     second call
+# write_csv1("data/csv2.csv")     second call
 # name,dept,salary
 # Maya,Engineering,118000
 # Omar,Sales,88000
